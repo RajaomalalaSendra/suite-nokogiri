@@ -16,10 +16,10 @@ end
 # create the spreadsheet methods
 def save_as_spreadsheet
 	session = GoogleDrive::Session.from_config("config.json")
-	session.upload_from_file("/home/malala/Documents/THP/suite-nokogiri/db/emails.json", "emails.json", convert: false)
+	session.upload_from_file("/home/malala/Documents/THP/suite-nokogiri/db/emails.json", "emails.json", convert: true)
 end
 # create of the save of the csv
 def save_as_csv
 	File.open("/home/malala/Documents/THP/suite-nokogiri/db/emails.csv", "w") {|f| f.write(@tabs.getting_the_townhall.inject([]) { |csv, row|  csv << CSV.generate_line(row) }.join(""))}
 end
-save_as_csv
+save_as_spreadsheet
