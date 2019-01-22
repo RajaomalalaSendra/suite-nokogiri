@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-
+require 'json'
 
 #1 Première méthode : Collecte de l'email d'une mairie d'une ville du Val d'Oise
 def get_townhall_email(townhall_url)
@@ -39,4 +39,8 @@ def scrapp_data
 end 
 
 
-scrapp_data
+def save_as_JSON(scrapp_data)
+	File.open("../../db/emails.json","w") do |f|
+    	f.write(scrapp_data.to_json)
+  end
+end
