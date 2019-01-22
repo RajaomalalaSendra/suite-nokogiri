@@ -17,12 +17,6 @@ end
 def save_as_spreadsheet
 	session = GoogleDrive::Session.from_config("config.json")
 	session.upload_from_file("/home/malala/Documents/THP/suite-nokogiri/db/emails.json", "emails.json", convert: false)
-	# Downloads to a local file.
-	file = session.file_by_title("hello.txt")
-	file.download_to_file("/path/to/hello.txt")
-
-	# Updates content of the remote file.
-	file.update_from_file("/path/to/hello.txt")
 end
 # create of the save of the csv
 def save_as_csv

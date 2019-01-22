@@ -60,7 +60,7 @@ class Scrapper
 
 		end
 
-	hash_contact=Hash(town1.zip(mail))
+	hash_contact=Hash[town1.zip(mail)]
 
 	end
 
