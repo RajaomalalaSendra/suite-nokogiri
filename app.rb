@@ -20,8 +20,6 @@ def save_as_spreadsheet
 end
 # create of the save of the csv
 def save_as_csv
-	CSV.open("/home/malala/Documents/THP/suite-nokogiri/db/emails.csv", "w")  do |c|
-		c << @tabs.getting_the_townhall
-	end
+	File.open("/home/malala/Documents/THP/suite-nokogiri/db/emails.csv", "w") {|f| f.write(@tabs.getting_the_townhall.inject([]) { |csv, row|  csv << CSV.generate_line(row) }.join(""))}
 end
-save_as_JSON
+save_as_csv
