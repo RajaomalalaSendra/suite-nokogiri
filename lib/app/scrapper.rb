@@ -32,7 +32,7 @@ end
 
 #3 Troisième méthode : Synchronisation des noms des villes et des emails des mairies
 def scrapp_data
-	url_array = get_townhall_urls 
+	url_array = get_townhall_urls
 	url_array.each do |townhall_url| #/ pour chaque URL d'une ville du Val d'Oise, on associe l'adresse mail de la mairie
 		get_townhall_email(townhall_url)
 	end
@@ -40,7 +40,7 @@ end
 
 
 def save_as_JSON(scrapp_data)
-	File.open("../../db/emails.json","w") do |f|
+	File.open("/home/mala/Documents/THP/suite-nokogiri/db/emails.json","w") do |f|
     	f.write(scrapp_data.to_json)
   end
 end
