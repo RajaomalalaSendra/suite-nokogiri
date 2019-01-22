@@ -26,13 +26,13 @@ class Scrapper
 
 	def getting_the_townhall
 
-	town1=[]
+	town1=Array.new
 
-	town=[]
+	town=Array.new
 
-	mail=[]	
+	mail=Array.new
 
-	hash_contact={}
+	hash_contact=Hash.new
 
 	i=0
 
